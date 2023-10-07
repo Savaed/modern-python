@@ -5,3 +5,4 @@
 .hypothesis/
 .venv
 .pytest_cache
+.vscode

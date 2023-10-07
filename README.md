@@ -1,10 +1,10 @@
 # Cookiecutter modern Python project template
 
-A Python project with everything you need to get started.
+A Python project template with everything you need to get started.
 
 ## Features
 This template provides the following features:
-- A basic, fully functional project structure created in a [flat style](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/),
+- A basic, fully functional project structure created in a [flat layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/),
 - [Poetry](https://python-poetry.org/) Python dependency management ([pyproject.toml](https://python-poetry.org/docs/pyproject/) support),
 - [Hydra](https://hydra.cc)-based configuration with [Pydantic](https://docs.pydantic.dev/latest/) validation,
 - Various open source licenses,
@@ -16,6 +16,7 @@ This template provides the following features:
 - CI/CD with [GitHub actions](https://github.com/features/actions),
 - [Codecov](https://about.codecov.io/) test coverage reports in CI,
 - GitHub [citation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files) file (BibTeX and APA format).
+- User friendly project creation prompts.
 
 
 ## Usage
@@ -24,11 +25,11 @@ To generate a project using this template, follow these steps:
 1. Install cookiecutter CLI, e.g. using PIP: `pip install --user cookiecutter`,
 2. Navigate to the desired directory and run the `cookiecutter https://github.com/Savaed/modern-python.git` command.
 3. Go to the root of the project you created (the one where the *README.md* file is located) and run the bash script: `bash sanity-check.sh`.
-4. You should see plenty of console outputs, especially with **poetry install, loggin, and pre-commit stufs**.
+4. You should see plenty of console outputs, especially with **poetry install, loggin, and pre-commit stuffs**.
 5. If there are no errors, remove the *sanity-check.sh* script and check the generated files to make any necessary changes.
 
 ## Sample project structure
-The project tree created with `cookiecutter https://github.com/Savaed/modern-python.git`
+The default project created with `cookiecutter https://github.com/Savaed/modern-python.git`:
 
 ```
 sample_project/                 < Root directory (flat style)
