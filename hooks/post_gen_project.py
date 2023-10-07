@@ -20,6 +20,7 @@ TIPS = """
   {%- endif %}
   - check .pre-commit-config.yaml file,
   - check tox.ini file,
+  - check .gitignore file,
   - run `cd {{ cookiecutter.project_slug }} && bash sanity-check.sh` to check
     if everthing was created correctly.
   - remove sanity-check.sh script.
