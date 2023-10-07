@@ -20,23 +20,15 @@ This template provides the following features:
 
 ## Usage
 
-To generate the project using this template take the following steps:
-1. Install cookiecutter CLI e.g. using PIP : `pip install --user cookiecutter`,
-2. Go to desired directory and run `cookiecutter https://github/Savaed/modern-python.git` command.
-3. Go to created project root dir (the one with *README.md* file) and run `bash sanity-check.sh` bash script.
-4. You should see a bunch of console output especially with **poetry install, logging, pre-commit run**.
-5. If there is no errors remove *sanity-check.sh* script and inspect generated files to provide necessary changes.
-
-
 To generate a project using this template, follow these steps:
 1. Install cookiecutter CLI, e.g. using PIP: `pip install --user cookiecutter`,
-2. Navigate to the desired directory and run the `cookiecutter https://github/Savaed/modern-python.git` command.
+2. Navigate to the desired directory and run the `cookiecutter https://github.com/Savaed/modern-python.git` command.
 3. Go to the root of the project you created (the one where the *README.md* file is located) and run the bash script: `bash sanity-check.sh`.
 4. You should see plenty of console outputs, especially with **poetry install, loggin, and pre-commit stufs**.
 5. If there are no errors, remove the *sanity-check.sh* script and check the generated files to make any necessary changes.
 
 ## Sample project structure
-The project tree created with `cookiecutter https://github/Savaed/modern-python.git`
+The project tree created with `cookiecutter https://github.com/Savaed/modern-python.git`
 
 ```
 sample_project/                 < Root directory (flat style)
