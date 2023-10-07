@@ -1,0 +1,15 @@
+__pycache__
+*.py[ocd]
+.Python
+.env
+.tox
+.coverage
+.coverage.*
+.cache
+coverage.xml
+logs
+.git
+.ru
+.mypy_cache
+.pytest_cache
+.hypothesis

@@ -1,0 +1,57 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.p[ocd]
+*$py.class
+
+# Tests & coverage
+.coverage
+.coverage.*
+{% if cookiecutter.use_hypothesis -%}
+.hypothesis/
+{% endif -%}
+.pytest_cache/
+.tox/
+coverage.xml
+htmlcov/
+
+# C extensions
+*.so
+
+# Distribution / packaging
+*.egg-info/
+*.egg
+.installed.cfg
+build/
+dist/
+MANIFEST
+sdist/
+wheels/
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+{% if cookiecutter.use_vscode -%}
+# VS Code
+# .vscode/
+{% endif -%}
+
+# Logging
+logs/
+*.log
+
+# Data
+# data/
+
+# Environment
+# .env
+env/
+
+# Source control
+.git/
+# .gitignore
+
+# Hydra output
+outputs/
+
+# Sanity check
+# sanity-check.sh

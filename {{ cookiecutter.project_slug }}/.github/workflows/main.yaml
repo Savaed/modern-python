@@ -1,0 +1,50 @@
+name: main
+
+on:
+  push:
+    branches: [{{ cookiecutter.git_main_branch }}]
+  pull_request:
+
+env:
+  FORCE_COLOR: "1"
+  TOX_TESTENV_PASSENV: FORCE_COLOR
+  MYPY_FORCE_COLOR: "1"
+
+jobs:
+  main:
+    name: Main workflow
+    strategy:
+      matrix:
+        os: [{{ cookiecutter.github_ci_os }}]
+        python-version: ["{{ cookiecutter.python_version }}"]
+      fail-fast: false
+    defaults:
+      run:
+        shell: bash
+    runs-on: {{ cookiecutter.github_ci_os }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      {%- raw %}
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      {% endraw -%}
+
+      - name: Run pre-commit
+        uses: pre-commit/action@v3.0.0
+
+      - name: Install tox and poetry
+        run: python -m pip --disable-pip-version-check install tox=={{ cookiecutter.tox_version }} poetry=={{ cookiecutter.poetry_version }}
+
+      - name: Run test via tox
+        run: tox -e py
+
+      - name: Run Codecov report
+        uses: codecov/codecov-action@v3
+        with:
+          # see https://github.com/codecov/codecov-action/issues/557 - for private repos only
+          token: {% raw -%}${{ secrets.{% endraw %}{{ cookiecutter.codecov_token_name }}{% raw %} }}{% endraw %}
+          file: coverage.xml

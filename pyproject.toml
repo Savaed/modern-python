@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "modern-python"
+version = "0.1.0"
+description = "Cookiecutter template for modern Python projects"
+authors = ["Krzysztof Gonet <36476874+Savaed@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.2"
+hypothesis = "^6.87.2"
+cookiecutter = "^2.4.0"
+
+[build-system]
+requires = ["poetry-core==1.6.1"]
+build-backend = "poetry.core.masonry.api"

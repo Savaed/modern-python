@@ -1,0 +1,7 @@
+**/*.p[ocd]
+**/__pycache__/
+.coverage
+.git/
+.hypothesis/
+.venv
+.pytest_cache

@@ -1,0 +1,5 @@
+config:
+  key1: value
+  key2:
+    sub_key1: 1
+    sub_key2: 2
