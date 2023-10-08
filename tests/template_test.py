@@ -1,5 +1,4 @@
 from pathlib import Path
-from pickletools import stringnl_noescape_pair
 import string
 from cookiecutter.main import cookiecutter
 

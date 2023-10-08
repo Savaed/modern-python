@@ -1,4 +1,3 @@
-from code import interact
 import re
 import string
 
