@@ -87,4 +87,4 @@ def test_cookiecutter__run_without_errors(cfg):
         files_num = len(list(Path(project_path).iterdir()))
 
     event(f"Files created: {files_num}")
-    assert files_num > 10
+    assert files_num >= 10  # 10 files are the minimum that can be created
