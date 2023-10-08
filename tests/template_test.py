@@ -67,7 +67,6 @@ cookiecutter_configs = st.fixed_dictionaries(
 )
 
 
-@settings(max_examples=100)
 @given(cookiecutter_configs)
 def test_cookiecutter__run_without_errors(cfg):
     """Test that for valid inputs the function runs without errors."""
