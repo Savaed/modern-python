@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "{{ cookiecutter.project_description }}"
 authors = ["{{ cookiecutter.author }} <{{ cookiecutter.mail }}>"]
 readme = "README.md"
+include = ["configs/"]
 
 [tool.poetry.dependencies]
 python = "~{{ cookiecutter.python_version }}"
@@ -65,4 +66,4 @@ strict_equality = true
 extra_checks = true
 
 [tool.poetry.scripts]
-{{ cookiecutter.project_slug|replace('_', '-') }}-test = "{{ cookiecutter.project_slug }}.scripts.script1:main"
+{{ cookiecutter.project_slug | replace('_', '-') }}-test = "{{ cookiecutter.project_slug }}.scripts.script1:main"
