@@ -5,10 +5,10 @@ A Python [cookiecutter](https://www.cookiecutter.io/) project template with ever
 ## Features
 This template provides the following features:
 - A basic, fully functional project structure created in a [flat layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/),
-- [Poetry](https://python-poetry.org/) Python dependency management ([pyproject.toml](https://python-poetry.org/docs/pyproject/) support),
+- [Poetry](https://python-poetry.org/) Python dependency management ([*pyproject.toml*](https://python-poetry.org/docs/pyproject/) support),
 - [Hydra](https://hydra.cc)-based configuration with [Pydantic](https://docs.pydantic.dev/latest/) validation,
 - Various open source licenses,
-- Python minimal [.gitignore](https://git-scm.com/docs/gitignore),
+- Python minimal [*.gitignore*](https://git-scm.com/docs/gitignore),
 - Management Python environments with [tox](https://tox.wiki/en/stable/),
 - Testing using [pytest](https://docs.pytest.org/en/stable/) and [hypothesis](https://hypothesis.readthedocs.io/en/latest/index.html) (for [property-based tests](https://www.youtube.com/watch?v=uN6JjpzVsAo)),
 - [Docker](https://www.docker.com/) support,
