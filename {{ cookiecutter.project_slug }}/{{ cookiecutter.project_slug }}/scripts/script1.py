@@ -1,8 +1,8 @@
 import hydra
 from omegaconf import OmegaConf
 
-from {{ cookiecutter.project_slug }}.config import AppConfig
-from {{ cookiecutter.project_slug }}.log import logger
+from {{cookiecutter.project_slug}}.config import AppConfig
+from {{cookiecutter.project_slug}}.log import logger
 
 
 @hydra.main("../../configs", "config", "1.3")

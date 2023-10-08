@@ -14,6 +14,9 @@ cookiecutter = "^2.4.0"
 hypothesis = "^6.87.2"
 pytest = "^7.4.2"
 
+[tool.isort]
+skip = ["{{ cookiecutter.project_slug }}"]
+
 [build-system]
 requires = ["poetry-core==1.6.1"]
 build-backend = "poetry.core.masonry.api"

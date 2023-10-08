@@ -1,9 +1,10 @@
-import pytest
-{% if cookiecutter.use_hypothesis %}
+{% if cookiecutter.use_hypothesis -%}
 from hypothesis import given
 from hypothesis import strategies as st
-{% endif %}
-from {{ cookiecutter.project_slug }}.file import add_two
+{% endif -%}
+import pytest
+
+from {{cookiecutter.project_slug}}.file import add_two
 
 
 @pytest.mark.parametrize("sample_global_fixture", [0.3, 1.0, 2.6], indirect=True)

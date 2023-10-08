@@ -1,12 +1,10 @@
-from pathlib import Path
 import string
-from cookiecutter.main import cookiecutter
-
 import tempfile
+from pathlib import Path
 
-from hypothesis import assume, event, given, settings
 import hypothesis.strategies as st
-
+from cookiecutter.main import cookiecutter
+from hypothesis import assume, event, given
 
 LETTERS_AND_DIGITS = string.ascii_letters + string.digits
 DISALLOWED_NAME_CHARACTERS = set(string.digits + string.punctuation) - set("-.'")

@@ -1,7 +1,6 @@
-from pathlib import Path
 import shutil
+from pathlib import Path
 from textwrap import dedent
-
 
 TIPS = """
 ✨ Project '{{ cookiecutter.project_slug }}' created successfuly using cookiecutter CLI.
