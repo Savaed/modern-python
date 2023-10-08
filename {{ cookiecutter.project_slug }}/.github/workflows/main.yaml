@@ -40,7 +40,7 @@ jobs:
         run: python -m pip --disable-pip-version-check install tox=={{ cookiecutter.tox_version }} poetry=={{ cookiecutter.poetry_version }}
 
       - name: Run test via tox
-        run: tox -e py
+        run: tox run -e py
 
       - name: Run Codecov report
         uses: codecov/codecov-action@v3
