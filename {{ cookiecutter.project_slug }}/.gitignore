@@ -9,7 +9,6 @@ __pycache__/
 {% if cookiecutter.use_hypothesis -%}
 .hypothesis/
 {% endif -%}
-.pytest_cache/
 .tox/
 coverage.xml
 htmlcov/
@@ -32,26 +31,22 @@ wheels/
 
 {% if cookiecutter.use_vscode -%}
 # VS Code
-# .vscode/
-{% endif -%}
+.vscode/
+{%- endif %}
 
 # Logging
 logs/
 *.log
 
 # Data
-# data/
+data/
 
 # Environment
-# .env
+.env
 env/
 
 # Source control
 .git/
-# .gitignore
 
 # Hydra output
 outputs/
-
-# Sanity check
-# sanity-check.sh
