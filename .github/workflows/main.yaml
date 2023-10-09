@@ -1,0 +1,41 @@
+name: main
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  FORCE_COLOR: "1"
+  TOX_TESTENV_PASSENV: FORCE_COLOR
+  MYPY_FORCE_COLOR: "1"
+
+jobs:
+  main:
+    name: Main workflow
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.11"]
+      fail-fast: false
+    defaults:
+      run:
+        shell: bash
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run pre-commit
+        uses: pre-commit/action@v3.0.0
+
+      - name: Install tox and poetry
+        run: python -m pip --disable-pip-version-check install tox=={{ cookiecutter.tox_version }} poetry=={{ cookiecutter.poetry_version }}
+
+      - name: Run test via tox
+        run: tox run -e py
