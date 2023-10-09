@@ -5,6 +5,7 @@ from {{cookiecutter.project_slug}}.config import AppConfig
 from {{cookiecutter.project_slug}}.log import logger
 
 
+@logger.catch(message="Unexpected error occurred")
 @hydra.main("../../configs", "config", "1.3")
 def main(cfg: AppConfig) -> int:
     cfg = AppConfig(**OmegaConf.to_object(cfg))
