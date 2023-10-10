@@ -6,7 +6,7 @@ from {{cookiecutter.project_slug}}.scripts.script1 import main
 
 def test_main__console_log(loguru_caplog: LogCaptureFixture) -> None:
     """Test that the `script1.main()` logs are correct."""
-    expected = "[SUCCESS ] Hello!                                             {{cookiecutter.project_slug}}.scripts.script1:main:11    key1=[1, 2, 3] key2=<class 'int'>"  # noqa
+    expected = "[SUCCESS ] Hello!                                             {{cookiecutter.project_slug}}.scripts.script1:main:12    key1=[1, 2, 3] key2=<class 'int'>"  # noqa
 
     with initialize(version_base="1.3", config_path="../configs"):
         cfg = compose(config_name="config")
