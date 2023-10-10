@@ -1,6 +1,7 @@
 import re
 import string
 
+
 LETTERS_AND_DIGITS = string.ascii_letters + string.digits
 
 PROJECT_NAME = "{{ cookiecutter.project_name }}"

@@ -16,6 +16,7 @@ pytest = "^7.4.2"
 
 [tool.isort]
 skip = ["{{ cookiecutter.project_slug }}"]
+lines_after_imports = 2
 
 [build-system]
 requires = ["poetry-core==1.6.1"]

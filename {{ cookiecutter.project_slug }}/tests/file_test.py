@@ -13,8 +13,8 @@ def test_add_two__add_correctly(sample_global_fixture: int) -> None:
     expected = sample_global_fixture + 2
     actual = add_two(sample_global_fixture)
     assert actual == expected
-
 {% if cookiecutter.use_hypothesis %}
+
 @given(st.floats(allow_nan=False, allow_infinity=False))
 def test_add_two__add_correctly_hypothesis_version(x: float) -> None:
     """Test that this function correctly adds 2 to `x`.
