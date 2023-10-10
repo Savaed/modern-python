@@ -28,6 +28,7 @@
         "GNU General Public License v3",
         "none"
     ],
+    "__cli_test_script": "{{ cookiecutter.project_slug | replace('_', '-') }}-test",
     "__python_version_str": "{{ cookiecutter.python_version.split('.')[:2] | join | lower }}",
     "__current_year": "{% now 'utc', '%Y' %}",
     "__prompts__": {
