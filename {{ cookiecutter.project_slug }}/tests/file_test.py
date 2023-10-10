@@ -8,7 +8,7 @@ from {{cookiecutter.project_slug}}.file import add_two
 
 
 @pytest.mark.parametrize("sample_global_fixture", [0.3, 1.0, 2.6], indirect=True)
-def test_add_two__add_correctly(sample_global_fixture: int) -> None:
+def test_add_two__add_correctly(sample_global_fixture: float) -> None:
     """Test that this function correctly adds 2 to `x`."""
     expected = sample_global_fixture + 2
     actual = add_two(sample_global_fixture)

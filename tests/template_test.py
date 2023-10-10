@@ -4,7 +4,7 @@ from pathlib import Path
 
 import hypothesis.strategies as st
 from cookiecutter.main import cookiecutter
-from hypothesis import assume, event, given
+from hypothesis import event, given
 
 
 LETTERS_AND_DIGITS = string.ascii_letters + string.digits
@@ -27,11 +27,18 @@ versions = st.sampled_from(
 
 cookiecutter_configs = st.fixed_dictionaries(
     {
-        "project_name": st.text(min_size=1, alphabet=f"{LETTERS_AND_DIGITS}-_. "),
-        "project_slug": st.text(min_size=1, alphabet=f"{LETTERS_AND_DIGITS}-_."),
+        "project_name": st.text(min_size=1, alphabet=f"{LETTERS_AND_DIGITS}-_. ").map(
+            lambda name: "test_name" if name.isspace() else name,
+        ),
+        "project_slug": st.text(min_size=1, alphabet=f"{LETTERS_AND_DIGITS}-_.").map(
+            lambda slug: "test_slug" if slug.strip("./").isspace() else slug,
+        ),
         "friendly_name": st.text(min_size=1),
         "author": st.text(
-            min_size=1, alphabet=string.ascii_letters + ". -'",
+            min_size=1,
+            alphabet=string.ascii_letters + ". -'",
+        ).map(
+            lambda author: "author" if author.strip("-.' ").isspace() else author,
         ),  # Not the best solustion as it cannot generate non standard characters
         "github_user": st.text(min_size=1, alphabet=string.printable),
         "mail": st.emails(),
@@ -67,23 +74,16 @@ cookiecutter_configs = st.fixed_dictionaries(
 
 
 @given(cookiecutter_configs)
-def test_cookiecutter__run_without_errors(cfg):
+def test_cookiecutter__run_without_errors(cfg: dict[str, str | int | bool]) -> None:
     """Test that for valid inputs the function runs without errors."""
-    assume(
-        all(
-            [
-                not cfg["project_name"].isspace(),
-                not cfg["project_slug"].isspace(),
-                cfg["project_slug"].strip("."),
-                cfg["author"].strip("-.' "),
-            ],
-        ),
-    )
     template_path = Path(__file__).parents[1].as_posix()
 
-    with tempfile.TemporaryDirectory() as tmpdir:
+    with tempfile.TemporaryDirectory() as tmp_dir:
         project_path = cookiecutter(
-            template_path, no_input=True, extra_context=cfg, output_dir=tmpdir,
+            template_path,
+            no_input=True,
+            extra_context=cfg,
+            output_dir=tmp_dir,
         )
         files_num = len(list(Path(project_path).iterdir()))
 
