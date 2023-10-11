@@ -32,13 +32,17 @@ plugins = ["covdefaults"]
 omit = ["**/conftest.py"]
 
 [tool.coverage.report]
-exclude_lines = ["pragma: no cover", "def __repr__", "def __str__"]
+exclude_lines = ["def __repr__", "def __str__"]
 
 [tool.black]
 line-length = {{ cookiecutter.line_length }}
 target-version = ["py{{ cookiecutter.__python_version_str }}"]
 
 [tool.ruff]
+select = ["E", "F", "N", "I", "UP"]
+ignore = [
+  "N818", # Exception name should be named with an Error suffix
+]
 line-length = {{ cookiecutter.line_length }}
 target-version = "py{{ cookiecutter.__python_version_str }}"
 
